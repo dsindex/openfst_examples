@@ -113,7 +113,7 @@ fstcompile --isymbols=isyms.txt --osymbols=osyms.txt --keep_isymbols --keep_osym
 fstprint --isymbols=isyms.txt --osymbols=osyms.txt binary.fst text.fst
 fstinfo binary.fst
 fstdraw --isymbols=isyms.txt --osymbols=osyms.txt binary.fst binary.dot
-dot -Tps binary.dot > binary.ps
+dot -Tpng binary.dot > binary.png
 
 close_fd
 
