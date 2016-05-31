@@ -8,4 +8,7 @@
   - [quick start](http://www.openfst.org/twiki/bin/view/FST/FstQuickTour)
   - [python extention](http://www.openfst.org/twiki/bin/view/FST/PythonExtension)
 
-
+- test
+```
+./test.sh -v -v
+```
