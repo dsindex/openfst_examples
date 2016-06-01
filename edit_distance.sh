@@ -122,6 +122,10 @@ fstcompose abc.fst T.fst | fstcompose - cba.fst > abc_T_cba.fst
 fstdraw --isymbols=ascii.syms --osymbols=ascii.syms abc_T_cba.fst abc_T_cba.dot
 dot -Tpng abc_T_cba.dot > abc_T_cba.png
 
+fstshortestpath abc_T_cba.fst > shortest.fst
+fstdraw --isymbols=ascii.syms --osymbols=ascii.syms shortest.fst shortest.dot
+dot -Tpng shortest.dot > shortest.png
+
 close_fd
 
 # end main
