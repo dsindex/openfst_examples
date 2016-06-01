@@ -112,6 +112,10 @@ fstcompile --isymbols=ascii.syms --osymbols=ascii.syms T.txt T.fst
 fstdraw --isymbols=ascii.syms --osymbols=ascii.syms T.fst T.dot
 dot -Tpng T.dot > T.png
 
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms abc.txt > abc.fst
+fstcompose abc.fst T.fst > T_abc.fst
+fstdraw --isymbols=ascii.syms --osymbols=ascii.syms T_abc.fst T_abc.dot
+dot -Tpng T_abc.dot > T_abc.png
 
 close_fd
 
