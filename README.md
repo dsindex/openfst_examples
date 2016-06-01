@@ -6,33 +6,28 @@
 - open fst references
   - [source](http://www.openfst.org/twiki/bin/view/FST/FstDownload)
   - [quick start](http://www.openfst.org/twiki/bin/view/FST/FstQuickTour)
+  - [tutorial](http://www.openfst.org/twiki/bin/view/FST/FstSltTutorial)
   - [python extention](http://www.openfst.org/twiki/bin/view/FST/PythonExtension)
+  - [edit distance using fst](http://www.tylerpalsulich.com/blog/2015/05/17/levenshtein-edit-distance-with-fsts/)
+  - [lm to fst](https://williamhartmann.wordpress.com/2014/02/02/converting-a-language-model-to-a-finite-state-transducer/)
+  - [edit distance automata](http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata)
 
 - install
 ```
 $ cd ~/openfst-1.5.3
+(for testing pywrapfst)
 $ ./configure --enable-python ; make ; make install
+(for testing pyfst, do not use pywrapfst)
+$ ./configure ; make ; make install ; CFLAGS="-std=c++0x" pip install pyfst
 $ apt-get install graphviz
 ```
 - test
 ```
-./test.sh -v -v
+./basic.sh -v -v
 ```
 
 - note
 ```
-- openfst tutorial
-  http://www.openfst.org/twiki/bin/view/FST/FstSltTutorial
-
-ㅡlm to fst
-  https://williamhartmann.wordpress.com/2014/02/02/converting-a-language-model-to-a-finite-state-transducer/
-
-ㅡedit distance using fst
-  http://www.tylerpalsulich.com/blog/2015/05/17/levenshtein-edit-distance-with-fsts/
-
-- edit distance automata
-  http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
-
 ㅡpyfst를 사용해서 edit distance automata
   구현해보고 단어 후보를 찾아보자
   : 사전피딩은 trie 사용
