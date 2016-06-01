@@ -113,9 +113,14 @@ fstdraw --isymbols=ascii.syms --osymbols=ascii.syms T.fst T.dot
 dot -Tpng T.dot > T.png
 
 fstcompile --isymbols=ascii.syms --osymbols=ascii.syms abc.txt > abc.fst
-fstcompose abc.fst T.fst > T_abc.fst
-fstdraw --isymbols=ascii.syms --osymbols=ascii.syms T_abc.fst T_abc.dot
-dot -Tpng T_abc.dot > T_abc.png
+fstcompose abc.fst T.fst > abc_T.fst
+fstdraw --isymbols=ascii.syms --osymbols=ascii.syms abc_T.fst abc_T.dot
+dot -Tpng abc_T.dot > abc_T.png
+
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms cba.txt > cba.fst
+fstcompose abc.fst T.fst | fstcompose - cba.fst > abc_T_cba.fst
+fstdraw --isymbols=ascii.syms --osymbols=ascii.syms abc_T_cba.fst abc_T_cba.dot
+dot -Tpng abc_T_cba.dot > abc_T_cba.png
 
 close_fd
 
