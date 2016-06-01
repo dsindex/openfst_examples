@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf8 -*-
 
-# reference : https://gist.github.com/tpalsulich/cbbdf3468654051f7493
-
 import os
 import sys
 from   optparse import OptionParser

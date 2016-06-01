@@ -23,7 +23,9 @@ $ apt-get install graphviz
 ```
 - test
 ```
+* all code from above references
 ./basic.sh -v -v
+./edit_distance.sh -v -v
 ```
 
 - note
