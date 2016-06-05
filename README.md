@@ -51,9 +51,9 @@ $ apt-get install graphviz
   a:b , b:c
   이런 케이스에 대해서만 가능하다
   결국 abc.fst, t.fst, cba.fst를 compose하면
-  a-b-c + 임의경로 + c-b-a
+  a -> b -> c + 임의경로 + c -> b -> a
   여기서
-  a:c-b:b-c:a
+  a:c -> b:b -> c:a
   이러한 transducer가 만들어지는 것
   이것의 shortest path가 edit distance
   lm에서도 비슷한데

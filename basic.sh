@@ -107,8 +107,8 @@ if (( VERBOSE_MODE > 1 )); then
 	revert_calmness
 fi
 
+cd ${CDIR}
 
-#fstcompile --isymbols=isyms.txt --osymbols=osyms.txt text.fst binary.fst
 fstcompile --isymbols=isyms.txt --osymbols=osyms.txt --keep_isymbols --keep_osymbols text.txt binary.fst
 fstprint --isymbols=isyms.txt --osymbols=osyms.txt binary.fst text.fst
 fstinfo binary.fst

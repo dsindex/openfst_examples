@@ -107,24 +107,36 @@ if (( VERBOSE_MODE > 1 )); then
 	revert_calmness
 fi
 
+function draw {
+	local _fst=$1
+	local _dot=$2
+	local _png=$3
+	local _isyms=${CDIR}/ascii.syms
+	local _osyms=${CDIR}/ascii.syms
+
+	fstdraw --isymbols=$_isyms --osymbols=$_osyms $_fst $_dot
+	dot -Tpng $_dot > $_png
+}
+
+isyms=${CDIR}/ascii.syms
+osyms=${CDIR}/ascii.syms
+
+cd ${CDIR}
+
 python make_T.py > T.txt
-fstcompile --isymbols=ascii.syms --osymbols=ascii.syms T.txt T.fst
-fstdraw --isymbols=ascii.syms --osymbols=ascii.syms T.fst T.dot
-dot -Tpng T.dot > T.png
+fstcompile --isymbols=$isyms --osymbols=$osyms T.txt T.fst
+draw T.fst T.dot T.png
 
-fstcompile --isymbols=ascii.syms --osymbols=ascii.syms abc.txt > abc.fst
+fstcompile --isymbols=$isyms --osymbols=$osyms abc.txt > abc.fst
 fstcompose abc.fst T.fst > abc_T.fst
-fstdraw --isymbols=ascii.syms --osymbols=ascii.syms abc_T.fst abc_T.dot
-dot -Tpng abc_T.dot > abc_T.png
+draw abc_T.fst abc_T.dot abc_T.png
 
-fstcompile --isymbols=ascii.syms --osymbols=ascii.syms cba.txt > cba.fst
+fstcompile --isymbols=$isyms --osymbols=$osyms cba.txt > cba.fst
 fstcompose abc.fst T.fst | fstcompose - cba.fst > abc_T_cba.fst
-fstdraw --isymbols=ascii.syms --osymbols=ascii.syms abc_T_cba.fst abc_T_cba.dot
-dot -Tpng abc_T_cba.dot > abc_T_cba.png
+draw abc_T_cba.fst abc_T_cba.dot abc_t_cba.png
 
 fstshortestpath abc_T_cba.fst > shortest.fst
-fstdraw --isymbols=ascii.syms --osymbols=ascii.syms shortest.fst shortest.dot
-dot -Tpng shortest.dot > shortest.png
+draw shortest.fst shortest.dot shortest.png
 
 close_fd
 
