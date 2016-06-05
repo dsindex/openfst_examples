@@ -8,6 +8,8 @@
   - [quick start](http://www.openfst.org/twiki/bin/view/FST/FstQuickTour)
   - [tutorial](http://www.openfst.org/twiki/bin/view/FST/FstSltTutorial)
   - [python extention](http://www.openfst.org/twiki/bin/view/FST/PythonExtension)
+  - [pyfst](http://pyfst.github.io/)
+    - [pyfst git](https://github.com/vchahun/pyfst)
   - [edit distance using fst](http://www.tylerpalsulich.com/blog/2015/05/17/levenshtein-edit-distance-with-fsts/)
   - [lm to fst](https://williamhartmann.wordpress.com/2014/02/02/converting-a-language-model-to-a-finite-state-transducer/)
   - [edit distance automata](http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata)
@@ -26,6 +28,7 @@ $ apt-get install graphviz
 * all code from above references
 ./basic.sh -v -v
 ./edit_distance.sh -v -v
+python edit_distance.py 네이버 네이비
 ```
 
 - note

@@ -21,9 +21,18 @@ if __name__ == '__main__':
 
 	startTime = time.time()
 
-	f = fst.Fst.read("binary.fst")
-
+	t1 = fst.Transducer()
+	t1.add_arc(0, 1, 'a', 'a')
+	t1.add_arc(1, 2, 'b', 'b')
+	t1.add_arc(2, 2, 'c', 'c')
+	t1[2].final = True	
 	
+
+	t2 = fst.Transducer()
+	t2.add_arc(0, 1, 'c', 'c')
+	t2.add_arc(1, 2, 'b', 'b')
+	t2.add_arc(2, 3, 'a', 'a')
+	t2[3].final = True	
 
 	'''
 	while 1 :
