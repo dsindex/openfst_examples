@@ -9,6 +9,7 @@ import time
 import fst
 
 # code from : https://github.com/vchahun/pyfst/blob/master/examples/edit.py
+# for understanding code : http://www.tylerpalsulich.com/blog/2015/05/17/levenshtein-edit-distance-with-fsts/
 
 # --verbose
 VERBOSE = 0

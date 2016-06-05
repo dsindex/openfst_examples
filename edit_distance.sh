@@ -133,7 +133,7 @@ draw abc_T.fst abc_T.dot abc_T.png
 
 fstcompile --isymbols=$isyms --osymbols=$osyms cba.txt > cba.fst
 fstcompose abc.fst T.fst | fstcompose - cba.fst > abc_T_cba.fst
-draw abc_T_cba.fst abc_T_cba.dot abc_t_cba.png
+draw abc_T_cba.fst abc_T_cba.dot abc_T_cba.png
 
 fstshortestpath abc_T_cba.fst > shortest.fst
 draw shortest.fst shortest.dot shortest.png
